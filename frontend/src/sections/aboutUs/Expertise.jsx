@@ -9,7 +9,7 @@ const Expertise = () => {
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl font-bold ml-25 mb-10 text-blue-900">
+                className="text-4xl font-bold md:ml-25 mb-10 text-blue-900">
                 Our Expertise
             </motion.h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">

@@ -24,7 +24,7 @@ const Countries = () => {
         <section className="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
                 <div className="w-full md:w-1/4 flex flex-col justify-start">
-                    <h2 className="text-4xl font-bold text-blue-900 leading-snug mb-4 relative">
+                    <h2 className="text-4xl font-bold text-blue-900 leading-snug mb-4 relative -mt-15 sm:mt-0">
                         Global Presence
                         <span className="block w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mt-3 rounded-full"></span>
                     </h2>
