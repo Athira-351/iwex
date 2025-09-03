@@ -1,0 +1,10 @@
+{
+  "name": "iwex",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {}
+}
