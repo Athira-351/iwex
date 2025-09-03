@@ -107,37 +107,44 @@ const Products = () => {
       <Navbar />
       <div className="w-full min-h-screen bg-gray-50 text-gray-900">
         <motion.section
-          className="relative bg-blue-900 py-32 text-center overflow-hidden"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Glassy overlay */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-          <div className="relative z-10 max-w-4xl mx-auto px-4">
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-4 text-white"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}>
-              Business Management System
-            </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl mb-6 text-white"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}>
-              ERPNext, ready for the following Business Verticals
-            </motion.p>
-            <motion.a
-              href="/enquiry"
-              className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}>
-              Book a Demo
-            </motion.a>
-          </div>
-        </motion.section>
+  className="relative bg-blue-900 py-20 sm:py-32 text-center overflow-hidden"
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  {/* Glassy overlay */}
+  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+    <motion.h1
+      className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white leading-snug"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+    >
+      Business Management System
+    </motion.h1>
+
+    <motion.p
+      className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.6 }}
+    >
+      ERPNext, ready for the following Business Verticals
+    </motion.p>
+
+    <motion.a
+      href="/enquiry"
+      className="inline-block bg-white text-blue-600 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg hover:bg-gray-100 transition text-sm sm:text-base -mb-[3rem] sm:mb-0"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Book a Demo
+    </motion.a>
+  </div>
+</motion.section>
+
 
         <section className="py-16 px-4 md:px-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-900">

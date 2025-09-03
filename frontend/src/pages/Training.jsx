@@ -78,7 +78,7 @@ const Training = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-lg md:text-xl max-w-3xl mx-auto text-gray-700"
+            className="text-lg md:text-xl max-w-3xl mx-auto text-gray-700 -mb-[5rem] sm:mb-0"
           >
             Learn ERPNext your way – from a quick overview to advanced deep dives.
             Pick the program that fits your pace and career goals.
