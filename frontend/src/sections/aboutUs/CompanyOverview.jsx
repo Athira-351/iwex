@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImage from "../../assets/aboutus_image1.jpg";
 
 const CompanyOverview = () => {
   return (
@@ -31,7 +32,7 @@ const CompanyOverview = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              src="/src/assets/aboutus_image1.jpg"
+              src={ aboutImage }
               alt="Team Work"
               className="rounded-2xl shadow-lg"
             />
