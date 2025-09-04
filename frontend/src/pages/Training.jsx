@@ -68,10 +68,10 @@ const Training = () => {
       <section className="relative py-28 md:py-36 text-center overflow-hidden bg-cover bg-center"
               style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-0 pointer-events-none"></div>
-        <div className="absolute inset-0 pointer-events-none z-0">
+        {/* <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-0 left-1/2 w-[400px] h-[400px] bg-indigo-200 rounded-full opacity-20 -translate-x-1/2 -translate-y-1/3"></div>
           <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] bg-blue-200 rounded-full opacity-20 translate-x-1/2 translate-y-1/4"></div>
-        </div>
+        </div> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
