@@ -10,6 +10,7 @@ import manufacturing from "../assets/productsManufacturing.jpg";
 import service from "../assets/productsService.jpg";
 import healthcare from "../assets/productsHealthcare.jpg";
 import education from "../assets/productsEducation.png";
+import heroImage from "../assets/buss-management-sys-banner.png";
 
 const services = [
   {
@@ -129,11 +130,13 @@ const Products = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Glassy overlay */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+                style={{ backgroundImage: `url(${heroImage})` }}></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-0 pointer-events-none"></div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white leading-snug"
+              className="relative text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4leading-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
