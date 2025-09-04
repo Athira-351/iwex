@@ -97,8 +97,24 @@ const Products = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
     ],
   };
 
@@ -107,43 +123,43 @@ const Products = () => {
       <Navbar />
       <div className="w-full min-h-screen bg-gray-50 text-gray-900">
         <motion.section
-  className="relative bg-blue-900 py-20 sm:py-32 text-center overflow-hidden"
-  initial={{ opacity: 0, y: -50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
->
-  {/* Glassy overlay */}
-  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+          className="relative bg-blue-900 py-20 sm:py-32 text-center overflow-hidden"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Glassy overlay */}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-  <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
-    <motion.h1
-      className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white leading-snug"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.6 }}
-    >
-      Business Management System
-    </motion.h1>
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+            <motion.h1
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white leading-snug"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              Business Management System
+            </motion.h1>
 
-    <motion.p
-      className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.6 }}
-    >
-      ERPNext, ready for the following Business Verticals
-    </motion.p>
+            <motion.p
+              className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              ERPNext, ready for the following Business Verticals
+            </motion.p>
 
-    <motion.a
-      href="/enquiry"
-      className="inline-block bg-white text-blue-600 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg hover:bg-gray-100 transition text-sm sm:text-base -mb-[3rem] sm:mb-0"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Book a Demo
-    </motion.a>
-  </div>
-</motion.section>
+            <motion.a
+              href="/enquiry"
+              className="inline-block bg-white text-blue-600 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg hover:bg-gray-100 transition text-sm sm:text-base -mb-[3rem] sm:mb-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Book a Demo
+            </motion.a>
+          </div>
+        </motion.section>
 
 
         <section className="py-16 px-4 md:px-16">
@@ -162,7 +178,7 @@ const Products = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="rounded-t-xl w-full h-48 object-cover"
+                  className="rounded-t-xl w-full object-cover"
                 />
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <h3 className="text-xl font-semibold mb-4">
@@ -192,11 +208,12 @@ const Products = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">
             ERPNext Modules
           </h2>
+          {/* <div className="overflow-hidden"> */}
           <Slider {...carouselSettings}>
             {modules.map((module, idx) => (
-              <div key={idx} className="px-4">
+              <div key={idx} className="px-2 sm:px-4">
                 <motion.div
-                  className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-[550px]"
+                  className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-[30rem] overflow-y-scroll"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -209,6 +226,7 @@ const Products = () => {
               </div>
             ))}
           </Slider>
+        {/* </div> */}
         </section>
       </div>
       <Footer />

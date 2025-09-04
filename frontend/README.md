@@ -33,8 +33,9 @@ Run the following following packages in project root(/frontend):
 4. npm install lucide-react <!-- Lightweight icons -->
 5. npm install react-icons <!-- Font Awesome & other icons -->
 6. npm install react-slick slick-carousel <!-- Carousels and sliders -->
-7. npm install nodemailer
-8. npm install crypto
+7. npm install tailwind-scrollbar-hide <!--scrollbar hide-->
+8. npm install nodemailer
+9. npm install crypto
 
 
 
