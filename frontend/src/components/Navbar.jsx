@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.png";
 
@@ -7,6 +7,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
+
+  const sidebarRef = useRef(null);
 
   // Scroll effect
   useEffect(() => {
@@ -45,6 +47,23 @@ const Navbar = () => {
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
+
+  //close sidebar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]); 
 
   const isHome = window.location.pathname === "/";
   const transparentMode = isHome && !scrolled;
@@ -174,6 +193,7 @@ const Navbar = () => {
 
         {/* Mobile Sidebar */}
         <div
+          ref={sidebarRef}
           className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}>
           <div className="p-6">
             <ul className="space-y-6 font-medium text-gray-700">
@@ -200,6 +220,33 @@ const Navbar = () => {
               <li>
                 <a href="#contact" onClick={() => setMenuOpen(false)}>
                   Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="/enquiry"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-sm">
+                  Enquiry
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#tickets"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-sm">
+                  Tickets
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/privacy-policy"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-sm">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/faq"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-sm" >
+                  FAQ
                 </a>
               </li>
               <li>
