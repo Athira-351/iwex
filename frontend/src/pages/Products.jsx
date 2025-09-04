@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
@@ -91,32 +91,31 @@ const Products = () => {
   useEffect(() => {
           document.title = "Products | IWEX Infomatics";
         }, []);
-  const carouselSettings = {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const desktopCarouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+  };
+
+  const mobileCarouselSettings = {
+    dots: true,
           infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-    ],
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
@@ -136,7 +135,7 @@ const Products = () => {
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
             <motion.h1
-              className="relative text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4leading-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+              className="relative text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -206,17 +205,45 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Carousel */}
         <section className="py-16 px-4 md:px-16 bg-gray-100">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">
             ERPNext Modules
           </h2>
-          {/* <div className="overflow-hidden"> */}
-          <Slider {...carouselSettings}>
+          <style>
+            {`
+              .no-scrollbar {
+                overflow-y: auto;
+                scrollbar-width: none; /* Firefox */
+              }
+              .no-scrollbar::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Edge */
+              }
+            `}
+          </style>
+          {isMobile ? (
+            <Slider key="mobile-carousel" {...mobileCarouselSettings}>
+              {modules.map((module, idx) => (
+                <div key={idx} className="px-2 sm:px-4">
+                  <motion.div
+                    className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-[30rem] no-scrollbar"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: idx * 0.1 }}>
+                    <h3 className="text-xl font-semibold mb-4">
+                      {module.title}
+                    </h3>
+                    <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: module.desc }}></p>
+                  </motion.div>
+                </div>
+              ))}
+            </Slider>
+          ) : (
+            <Slider key="desktop-carousel" {...desktopCarouselSettings}>
             {modules.map((module, idx) => (
               <div key={idx} className="px-2 sm:px-4">
                 <motion.div
-                  className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-[30rem] overflow-y-scroll"
+                  className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-[30rem] no-scrollbar"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -229,7 +256,7 @@ const Products = () => {
               </div>
             ))}
           </Slider>
-        {/* </div> */}
+        )}
         </section>
       </div>
       <Footer />
