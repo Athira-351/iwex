@@ -6,8 +6,8 @@ const LoginWithEmail = ({ setView }) => {
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const inputStyle = "w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900";
-  const buttonPrimary = "w-full bg-blue-900 hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition";
+  const inputStyle = "w-full px-4 py-1 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900";
+  const buttonPrimary = "w-full bg-blue-900 hover:bg-blue-800 text-white py-1 rounded-lg font-semibold transition";
 
   const handleSendLink = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const LoginWithEmail = ({ setView }) => {
           Login with Email Link
         </h4>
       </div>
-      <form onSubmit={handleSendLink} className="space-y-6">
+      <form onSubmit={handleSendLink} className="space-y-3">
         <input
           type="email"
           id="login_with_email_link_email"

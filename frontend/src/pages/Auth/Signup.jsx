@@ -33,20 +33,21 @@ const Signup = ({ setView }) => {
     }
   };
 
-  const inputStyle = "w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900";
-  const buttonPrimary = "w-full bg-blue-900 hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition";
+  const inputStyle = "w-full px-4 py-1 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900";
+  const buttonPrimary = "w-full bg-blue-900 hover:bg-blue-800 text-white py-1 rounded-lg font-semibold transition";
 
   return (
     <>
       <Navbar />
-      <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-gray-200 md:mt-30 md:mb-20">
+      <section className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+        <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border border-gray-200">
         <div className="text-center mb-6">
           <img className="w-20 mx-auto mb-4" src={Logo} alt="Logo" />
           <h4 className="text-2xl font-semibold text-gray-800">
             Create an iWEX Account
           </h4>
         </div>
-        <form onSubmit={handleSignup} className="space-y-6">
+        <form onSubmit={handleSignup} className="space-y-3">
           <input
             type="text"
             id="signup_fullname"
@@ -89,6 +90,7 @@ const Signup = ({ setView }) => {
             </a>
           </button>
         </p>
+        </div>
       </section>
       <Footer />
     </>
