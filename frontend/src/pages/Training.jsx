@@ -65,7 +65,7 @@ const Training = () => {
   return (
     <>
       <Navbar />
-      <section className="relative py-28 md:py-36 text-center overflow-hidden bg-cover bg-center"
+      <section className="relative py-28 md:py-36 px-4 text-center overflow-hidden bg-cover bg-center"
               style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-0 pointer-events-none"></div>
         {/* <div className="absolute inset-0 pointer-events-none z-0">
