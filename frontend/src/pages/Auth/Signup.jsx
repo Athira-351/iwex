@@ -92,7 +92,6 @@ const Signup = ({ setView }) => {
         </p>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

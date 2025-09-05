@@ -32,7 +32,7 @@ const Login = ({ setView }) => {
   return (
     <>
       <Navbar />
-      <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-gray-200 md:mt-30">
+      <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-gray-200 mt-30 md:mt-30">
         <div className="text-center mb-6">
           <img className="w-20 mx-auto mb-4" src={Logo} alt="Logo" />
           <h4 className="text-2xl font-semibold text-gray-800">
